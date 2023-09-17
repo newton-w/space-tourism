@@ -24,6 +24,8 @@ const config: Config = {
         "md_earth": "url('../app/images/md-earth.jpg')",
         "lg_earth": "url('../app/images/lg-earth.jpg')",
         "destination": "url('../app/images/destination.jpg')",
+        "md_destination": "url('../app/images/md-destination.jpg')",
+        "lg_destination": "url('../app/images/lg-destination.jpg')",
 
       },
       colors: {
