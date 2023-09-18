@@ -1,12 +1,39 @@
-"use client"
+// "use client"
 
 import classNames from 'classnames'
 
 import useStore from '@/zustand/index-store'
+// import { useEffect, useState } from 'react'
 
 const MiniNav = () => {
 
     const index = useStore(state => state.index)
+
+    // const [url, setUrl] = useState("moon")
+
+    // useEffect(()=>{
+    //     if(index === 0){
+    //         setUrl("moon")
+    //     }else if(index === 1){
+    //         setUrl("mars")
+    //     }else if(index === 2){
+    //         setUrl("europa")
+    //     }else if(index === 3){
+    //         setUrl("titan")
+    //     }
+
+    // },[index, url])
+
+    // useEffect(()=>{
+    //     window.history.pushState(
+    //         null,
+    //         "",
+    //         `destination=${url}`
+    //     )
+
+        
+
+    // },[index, url])
 
 
     return (

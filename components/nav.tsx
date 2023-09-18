@@ -6,6 +6,8 @@ import classNames from "classnames"
 
 import logo from "@/app/images/logo.png"
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 
 const Nav = () => {
 
@@ -15,9 +17,34 @@ const Nav = () => {
         setMenu((prev) => !prev)
     }
 
+    const path = usePathname()
+
+    const navLink = [
+        {
+            "id": "00",
+            "name": "home",
+            "link": "/"
+        },
+        {
+            "id": "01",
+            "name": "destination",
+            "link": "/destination"
+        },
+        {
+            "id": "02",
+            "name": "crew",
+            "link": "/crew"
+        },
+        {
+            "id": "03",
+            "name": "technology",
+            "link": "/technology"
+        }
+    ]
+
     return (
         <div className=" 2xl:container 2xl:mx-auto ">
-            <div className="fixed w-full flex items-center justify-between p-6 md:px-11 lg:p-14 ">
+            <nav className="fixed w-full flex items-center justify-between p-6 md:px-11 lg:p-14 ">
                 <div>
                     <Image src={logo} width={48} height={46} alt="logo" className=" w-10 h-10 object-cover" />
                 </div>
@@ -30,11 +57,18 @@ const Nav = () => {
 
                 <div className={classNames(`z-40 absolute top-0 right-0 h-screen w-64 bg-white/5 backdrop-blur translate-x-0 opacity-0 duration-300  md:hidden`, { 'translate-x-0 opacity-100': menu === false })}>
                     <ul className=" pt-[7.5rem] pl-8 flex flex-col gap-8">
-                        <li className="flex gap-3 text-base text-white">
-                            <p className="font-bold">00</p>
-                            <p className="lg:font-light">HOME</p>
-                        </li>
-                        <li className="flex gap-3 text-base text-white">
+
+                        {
+                            navLink.map((item) => (
+
+                                <Link onClick={HandleMenu} href={item.link} className={`${path === item.link ? 'active' : ''} flex gap-3 text-base text-white`} key={item.id}>
+                                    <p className="hidden lg:block font-bold">{item.id}</p>
+                                    <p className="uppercase">{item.name}</p>
+                                </Link>
+
+                            ))}
+
+                        {/* <li className="flex gap-3 text-base text-white">
                             <p className="font-bold">01</p>
                             <p className="lg:font-light">DESTINATION</p>
                         </li>
@@ -45,34 +79,39 @@ const Nav = () => {
                         <li className="flex gap-3 text-base text-white">
                             <p className="font-bold">03</p>
                             <p className="lg:font-light">TECHNOLOGY</p>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
 
-                <div className="hidden w-[28.125rem] h-24 bg-white/5 backdrop-blur absolute right-0 md:flex items-center justify-center text-white gap-10 text-sm lg:w-[790px] xl:w-[890px] 2xl:left-[507px]">
-                    <Link href="/" className="flex gap-3 text-base text-white">
-                        <p className="hidden lg:block font-bold">00</p>
-                        <p>HOME</p>
-                    </Link>
+                <ul className={`hidden w-[28.125rem] h-24 bg-white/5 backdrop-blur absolute right-0 md:flex items-center justify-center text-white gap-10 text-sm lg:w-[790px] xl:w-[890px] 2xl:left-[507px]`}>
+                    {
+                        navLink.map((item) => (
 
-                    <Link href="/destination" className="flex gap-3 text-base text-white">
-                        <p className="hidden lg:block font-bold">01</p>
-                        <p>DESTINATION</p>
-                    </Link>
+                            <Link href={item.link} className={`${path === item.link ? 'active' : ''} flex gap-3 text-base text-white lg:gap-4`} key={item.id}>
+                                <p className="hidden lg:block font-bold">{item.id}</p>
+                                <p className="uppercase">{item.name}</p>
+                            </Link>
 
-                    <Link href="/crew" className="flex gap-3 text-base text-white">
-                        <p className="hidden lg:block font-bold">02</p>
-                        <p>CREW</p>
-                    </Link>
-                    <Link href="/technology" className="flex gap-3 text-base text-white">
-                        <p className="hidden lg:block font-bold">03</p>
-                        <p>TECHNOLOGY</p>
-                    </Link>
-                </div>
+                        ))}
+                </ul>
 
-            </div>
+            </nav>
         </div>
     );
 }
 
 export default Nav;
+
+{/* <Link href="/destination" className="flex gap-3 text-base text-white lg:gap-4">
+        <p className="hidden lg:block font-bold">01</p>
+        <p>DESTINATION</p>
+    </Link>
+
+    <Link href="/crew" className="flex gap-3 text-base text-white lg:gap-4">
+        <p className="hidden lg:block font-bold">02</p>
+        <p>CREW</p>
+    </Link>
+    <Link href="/technology" className="flex gap-3 text-base text-white lg:gap-4">
+        <p className="hidden lg:block font-bold">03</p>
+        <p>TECHNOLOGY</p>
+    </Link> */}

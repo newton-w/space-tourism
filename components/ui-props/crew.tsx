@@ -1,63 +1,57 @@
 import Image from "next/image"
-import {motion as m} from 'framer-motion'
+import { motion as m } from 'framer-motion'
 import useStore from "@/zustand/index-store"
 import CrewNav from "../crew-nav"
 
 interface CrewPageProps {
-    image : string
-    title : string
-    description : string
-    name : string
-    
+    image: string
+    title: string
+    description: string
+    name: string
+
 
 }
 
-const CrewPage : React.FC<CrewPageProps> = ({
+const CrewPage: React.FC<CrewPageProps> = ({
     image,
     title,
     description,
     name,
- 
+
 }) => {
 
     const crew = useStore((state) => state.crew)
 
-    return ( 
-        <div className="bg-destination bg-cover h-[950px] bg-bluish bg-center w-full md:bg-md_destination md:h-[1024px] lg:overflow-hidden lg:bg-lg_destination lg:h-screen">
-        <m.div
-        key={crew}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        exit={{ opacity: 0 }}
-        className=" text-white pt-[6.375rem] md:px-11 md:pt-[8.5rem] 2xl:container 2xl:mx-auto">
+    return (
+        <div className="bg-crew bg-cover h-screen bg-bluish bg-center w-full md:bg-md_crew  lg:bg-lg_crew lg:h-screen lg:overflow-hidden">
+            <m.div
+                key={crew}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                exit={{ opacity: 0 }}
+                className=" text-white pt-[6.375rem] md:px-11 md:pt-[8.5rem] lg:px-[10.3125rem] 2xl:container 2xl:mx-auto">
 
-            <h2 className="text-center md:text-start xl:pl-[10.375rem]"><span className="font-bold text-white/50 pr-2">01</span> PICK YOUR DESTINATION</h2>
-            <div className="md:flex md:items-center md:w-full md:justify-center lg:grid lg:gap-6">
-                <div className="flex flex-col items-center justify-center lg:gap-[9.813rem] lg:grid lg:grid-cols-2 lg:justify-between lg:items-end">
-                    <Image src={image} width={455} height={455} alt="moon" className=" w-[10.625rem] h-[10.625rem] md:w-[18.75rem] md:h-[18.75rem] mt-8 md:mt-[3.75rem] lg:w-[25.813rem] lg:h-[25.813rem] xl:w-[27.813rem] xl:h-[27.813rem]" />
-                    <div className="flex flex-col items-center lg:items-start lg:justify-center">
-                        <CrewNav />
-                        <h1 className="font-bellefair text-[3.5rem] pb-3 uppercase md:text-[5rem]">{title}</h1>
-                        <p className=" text-[0.938rem] text-center text-cream px-6 md:px-0 md:w-[35.75rem] lg:w-[27.813rem] lg:text-start">{description}</p>
-                        <hr className="px-6 w-[20.438rem] bg-line my-8 md:w-[35.75rem] lg:w-[27.813rem]"/>
-                        <div className="md:grid md:grid-cols-2 md:w-[35.75rem]  lg:justify-start lg:w-[27.813rem]">
-                            <div className="flex flex-col items-center justify-center gap-3 pb-8 lg:items-start ">
-                                <p className=" text-cream text-sm font-b_condenced">AVG. name</p>
-                                <p className=" font-bellefair text-[1.75rem] uppercase">{name}</p>
+                <h2 className="text-center md:text-start md:px-11  md:text-xl lg:text-[1.75rem] lg:px-0"><span className="font-bold text-white/50 pr-2 md:pr-4 lg:pr-6">02</span>MEET YOUR CREW</h2>
+                <div className="md:flex md:items-center md:w-full md:justify-center lg:grid lg:justify-between lg:top-0">
+                    <div className="flex flex-col items-center justify-center md:relative md:flex-col-reverse lg:static lg:gap-[4.125rem] lg:flex-row-reverse lg:justify-between">
+                        <Image src={image} alt="moon" width={568} height={712} className=" h-[13.875rem] w-[11.07rem] object-cover  md:w-[28.523rem] md:h-[35.75rem] md:absolute md:top-[18.75rem] lg:top-0 lg:relative xl:w-[35.504rem] xl:h-[44.5rem]" />
+                        <hr className=" w-[20.438rem] bg-line h-[0.063rem] md:hidden" />
+                        <div className="flex flex-col items-center md:flex-col-reverse md:w-[28.625rem]  lg:items-start lg:justify-center">
+                            <CrewNav />
+                            <div className="flex flex-col items-center font-bellefair lg:items-start lg:w-full">
+                                <h1 className="pb-3 uppercase text-cream lg:text-[2rem]">{title}</h1>
+                                <h2 className="text-2xl uppercase lg:text-[3rem]">{name}</h2>
+                                <p className=" text-[0.938rem] py-8 text-center text-cream px-6 md:px-0 md:w-[35.75rem] lg:w-[27.75rem] lg:text-start lg:text-lg">{description}</p>
                             </div>
-                            <div className="flex flex-col items-center justify-center gap-3 pb-8 lg:items-start">
-                                <p className=" text-cream text-sm font-b_condenced">EST. TRAVEL TIME</p>
-                                <p className=" font-bellefair text-[1.75rem] uppercase"></p>
-                            </div>
+
                         </div>
                     </div>
                 </div>
-            </div>
-            
-        </m.div>
-    </div>
-     );
+
+            </m.div>
+        </div>
+    );
 }
- 
+
 export default CrewPage;

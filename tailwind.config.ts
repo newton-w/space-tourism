@@ -26,6 +26,13 @@ const config: Config = {
         "destination": "url('../app/images/destination.jpg')",
         "md_destination": "url('../app/images/md-destination.jpg')",
         "lg_destination": "url('../app/images/lg-destination.jpg')",
+        "crew": "url('../app/images/crew.jpg')",
+        "md_crew": "url('../app/images/md-crew.jpg')",
+        "lg_crew": "url('../app/images/lg-crew.jpg')",
+        "tech": "url('../app/images/technology.jpg')",
+        "md_tech": "url('../app/images/md-technology.jpg')",
+        "lg_tech": "url('../app/images/lg-technology.jpg')",
+
 
       },
       colors: {
