@@ -22,7 +22,7 @@ const Destination = () => {
 
     return (
        
-            <DestinationPage number={destination.id} image={`${destination.image}`} place={destination.place} description={destination.description} distance={destination.distance} timetravel={destination.timetravel} />
+            <DestinationPage image={`${destination.image}`} place={destination.place} description={destination.description} distance={destination.distance} timetravel={destination.timetravel} />
        
     );
 }
