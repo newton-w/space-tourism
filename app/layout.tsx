@@ -8,7 +8,7 @@ const inter = Barlow_Condensed({ weight: '400', subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Space Tourism ',
-  description: 'Space tourism',
+  description: 'Developed by newton-w',
 }
 
 export default function RootLayout({

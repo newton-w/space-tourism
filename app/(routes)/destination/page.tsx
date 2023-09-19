@@ -8,6 +8,7 @@ import useStore from "@/zustand/index-store";
 
 
 
+
 const Destination = () => {
 
     const data = DestinationData
@@ -21,8 +22,8 @@ const Destination = () => {
 
 
     return (
-       
-            <DestinationPage image={`${destination.image}`} place={destination.place} description={destination.description} distance={destination.distance} timetravel={destination.timetravel} />
+      
+       <DestinationPage image={`${destination.image}`} place={destination.place} description={destination.description} distance={destination.distance} timetravel={destination.timetravel} />
        
     );
 }

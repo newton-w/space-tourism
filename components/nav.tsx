@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image";
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import classNames from "classnames"
 
 import logo from "@/app/images/logo.png"
@@ -45,9 +45,9 @@ const Nav = () => {
     return (
         <div className=" 2xl:container 2xl:mx-auto ">
             <nav className="fixed w-full flex items-center justify-between p-6 md:px-11 lg:p-14 ">
-                <div>
+                <Link href="/">
                     <Image src={logo} width={48} height={46} alt="logo" className=" w-10 h-10 object-cover" />
-                </div>
+                </Link>
 
                 <div className={classNames('z-50 lg:hidden mr-4 flex flex-col gap-2 cursor-pointer duration-300  md:hidden', { '-rotate-45': menu === false })} onClick={HandleMenu}>
                     <div className={classNames(' w-6 h-[0.188rem] bg-white duration-300', { 'translate-y-[9px]': menu === false })}> </div>
@@ -67,20 +67,11 @@ const Nav = () => {
                                 </Link>
 
                             ))}
-
-                        {/* <li className="flex gap-3 text-base text-white">
-                            <p className="font-bold">01</p>
-                            <p className="lg:font-light">DESTINATION</p>
-                        </li>
-                        <li className="flex gap-3 text-base text-white">
-                            <p className="font-bold">02</p>
-                            <p className="lg:font-light">CREW</p>
-                        </li>
-                        <li className="flex gap-3 text-base text-white">
-                            <p className="font-bold">03</p>
-                            <p className="lg:font-light">TECHNOLOGY</p>
-                        </li> */}
                     </ul>
+                </div>
+
+                <div className="hidden lg:flex items-center justify-center w-[27.125rem] bg-white/50 h-[0.063rem] z-50 translate-x-16 mr-auto xl:translate-x-28 ">
+                   
                 </div>
 
                 <ul className={`hidden w-[28.125rem] h-24 bg-white/5 backdrop-blur absolute right-0 md:flex items-center justify-center text-white gap-10 text-sm lg:w-[790px] xl:w-[890px] 2xl:left-[507px]`}>
@@ -101,17 +92,3 @@ const Nav = () => {
 }
 
 export default Nav;
-
-{/* <Link href="/destination" className="flex gap-3 text-base text-white lg:gap-4">
-        <p className="hidden lg:block font-bold">01</p>
-        <p>DESTINATION</p>
-    </Link>
-
-    <Link href="/crew" className="flex gap-3 text-base text-white lg:gap-4">
-        <p className="hidden lg:block font-bold">02</p>
-        <p>CREW</p>
-    </Link>
-    <Link href="/technology" className="flex gap-3 text-base text-white lg:gap-4">
-        <p className="hidden lg:block font-bold">03</p>
-        <p>TECHNOLOGY</p>
-    </Link> */}

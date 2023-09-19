@@ -13,11 +13,16 @@ const Crew = () => {
 
     const [member, setMember] = useState(data[crew])
 
+
+
     useEffect(() => {
         setMember(data[crew])
+        
     }, [crew, data])
 
+    
     return (
+
         <CrewPage name={member.name} title={member.title} image={member.image} description={member.description} />
     );
 }
