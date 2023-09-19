@@ -20,18 +20,18 @@ const config: Config = {
 
     extend: {
       backgroundImage: {
-        "earth": "url('../app/images/earth.jpg')",
-        "md_earth": "url('../app/images/md-earth.jpg')",
-        "lg_earth": "url('../app/images/lg-earth.jpg')",
-        "destination": "url('../app/images/destination.jpg')",
-        "md_destination": "url('../app/images/md-destination.jpg')",
-        "lg_destination": "url('../app/images/lg-destination.jpg')",
-        "crew": "url('../app/images/crew.jpg')",
-        "md_crew": "url('../app/images/md-crew.jpg')",
-        "lg_crew": "url('../app/images/lg-crew.jpg')",
-        "tech": "url('../app/images/technology.jpg')",
-        "md_tech": "url('../app/images/md-technology.jpg')",
-        "lg_tech": "url('../app/images/lg-technology.jpg')",
+        "earth": "url('../app/images/earth.webp')",
+        "md_earth": "url('../app/images/md-earth.webp')",
+        "lg_earth": "url('../app/images/lg-earth.webp')",
+        "destination": "url('../app/images/destination.webp')",
+        "md_destination": "url('../app/images/md-destination.webp')",
+        "lg_destination": "url('../app/images/lg-destination.webp')",
+        "crew": "url('../app/images/crew.webp')",
+        "md_crew": "url('../app/images/md-crew.webp')",
+        "lg_crew": "url('../app/images/lg-crew.webp')",
+        "tech": "url('../app/images/technology.webp')",
+        "md_tech": "url('../app/images/md-technology.webp')",
+        "lg_tech": "url('../app/images/lg-technology.webp')",
 
 
       },

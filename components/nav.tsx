@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useState } from "react"
 import classNames from "classnames"
 
-import logo from "@/app/images/logo.png"
+import logo from "@/app/images/logo.webp"
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
