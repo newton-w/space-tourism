@@ -61,10 +61,12 @@ const Nav = () => {
                         {
                             navLink.map((item) => (
 
-                                <Link onClick={HandleMenu} href={item.link} className={`${path === item.link ? 'active' : ''} flex gap-3 text-base text-white`} key={item.id}>
-                                    <p className="hidden lg:block font-bold">{item.id}</p>
-                                    <p className="uppercase">{item.name}</p>
-                                </Link>
+                               <li>
+                                    <Link onClick={HandleMenu} href={item.link} className={`${path === item.link ? 'active' : ''} flex gap-3 text-base text-white`} key={item.id}>
+                                        <p className="hidden lg:block font-bold">{item.id}</p>
+                                        <p className="uppercase">{item.name}</p>
+                                    </Link>
+                               </li>
 
                             ))}
                     </ul>
