@@ -1,7 +1,7 @@
-import './globals.css'
 import type { Metadata } from 'next'
 import { Barlow_Condensed } from 'next/font/google'
 
+import './globals.css'
 import Nav from '@/components/nav'
 
 const inter = Barlow_Condensed({ weight: '400', subsets: ['latin'] })
