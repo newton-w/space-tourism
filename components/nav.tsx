@@ -55,7 +55,7 @@ const Nav = () => {
                     <div className={classNames(' w-6 h-[0.188rem] bg-white duration-300', { 'rotate-90 -translate-y-[10px]': menu === false })}> </div>
                 </div>
 
-                <div className={classNames(`z-40 absolute top-0 right-0 h-screen w-64 bg-white/5 backdrop-blur translate-x-0 opacity-0 duration-300  md:hidden`, { 'translate-x-0 opacity-100': menu === false })}>
+                <div className={classNames(`z-40 absolute top-0 right-0 h-screen w-64 bg-white/5 backdrop-blur duration-300  md:hidden`, { 'translate-x-96': menu === true })}>
                     <div className="ul pt-[7.5rem] pl-8 flex flex-col gap-8">
 
                         {
